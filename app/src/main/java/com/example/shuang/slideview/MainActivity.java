@@ -48,7 +48,6 @@ public class MainActivity extends ActionBarActivity implements SeekBar.OnSeekBar
             }else{
                 originprogress = progress;
             }
-
         }
     }
 
@@ -61,6 +60,7 @@ public class MainActivity extends ActionBarActivity implements SeekBar.OnSeekBar
     public void onStopTrackingTouch(SeekBar seekBar) {
         if (seekBar.getProgress() < 80) {//判断小于80的不算unlock操作
             seekBar.setProgress(0);
+            originprogress = 0;
         } else {
             seekBar.setProgress(100);
             Intent intent = new Intent(MainActivity.this, TestActivity.class);
